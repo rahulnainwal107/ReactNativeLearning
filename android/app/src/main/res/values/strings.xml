@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FirebasePushNotification</string>
+    <string name="default_notification_channel_id">fcm_FirebaseNotifiction_default_channel</string>
+</resources>
