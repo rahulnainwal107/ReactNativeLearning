@@ -135,7 +135,22 @@ export default class App extends React.Component<Props> {
     return (
       <View style={styles.container}>
         <Image source={require('./firebase.png')}></Image>
-        <Text style={{position:'absolute'}}>Welcom User</Text>
+        <View style={{
+          position: 'absolute',
+          width: 50,
+          height: 50,
+          borderRadius: 50 / 2,
+          backgroundColor: 'white',
+          justifyContent: 'center',
+          alignItems: 'center',
+          shadowOpacity: 1,
+          elevation:5,
+          shadowRadius: 5,
+          shadowColor: 'red',
+          shadowOffset: { height: 10, width: 10 }
+        }}>
+          <Text style={{fontSize:24,fontWeight:'bold'}}>X</Text>
+        </View>
       </View>
     );
   }
