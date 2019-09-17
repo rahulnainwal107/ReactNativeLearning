@@ -1,12 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import MainStackNavigatorI from './src/Router/MainStackNavigator'
-import TabNavigator from './src/Router/TabNavigator'
+import MainStackNavigator from './src/Router/MainStackNavigator'
 
 export default class App extends React.Component {
   render() {
     return (
-      <MainStackNavigatorI />
+      <MainStackNavigator />
     );
   }
 }

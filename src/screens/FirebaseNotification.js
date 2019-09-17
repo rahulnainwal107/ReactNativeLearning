@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
   Text,
-  Alert, Image, Animated
+  Alert, Image
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
@@ -35,6 +35,18 @@ export default class App extends React.Component<Props> {
     }
   }
 
+  //2
+  async requestPermission() {
+    try {
+      await firebase.messaging().requestPermission();
+      // User has authorised
+      this.getToken();
+    } catch (error) {
+      // User has rejected permissions
+      console.log('permission rejected');
+    }
+  }
+
   //3
   async getToken() {
     let fcmToken = await AsyncStorage.getItem('fcmToken');
@@ -49,17 +61,6 @@ export default class App extends React.Component<Props> {
     console.log('fcmToken:', fcmToken);
   }
 
-  //2
-  async requestPermission() {
-    try {
-      await firebase.messaging().requestPermission();
-      // User has authorised
-      this.getToken();
-    } catch (error) {
-      // User has rejected permissions
-      console.log('permission rejected');
-    }
-  }
 
   async createNotificationListeners() {
     /*

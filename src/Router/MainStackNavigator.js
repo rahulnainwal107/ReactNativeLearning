@@ -20,6 +20,7 @@ const StackNavigator = createStackNavigator({
         screen: TabNavigator
     }
 }, {
+    initialRouteName: 'AppIntro',
     defaultNavigationOptions: {
         header: null
     }

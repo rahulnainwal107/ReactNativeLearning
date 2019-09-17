@@ -4,6 +4,7 @@ import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
 import FirebaseNotification from '../screens/FirebaseNotification';
 import ActivityIndicatorComponent from '../screens/ActivityIndicatorComponent';
+import NetInfoCheck from '../screens/NetInfoCheck'
 
 export default class App extends React.Component {
     render() {
@@ -14,21 +15,36 @@ export default class App extends React.Component {
 }
 const TopTabNavigation = createMaterialTopTabNavigator({
     FirebaseNotification: {
-        screen: FirebaseNotification
+        screen: FirebaseNotification,
+        navigationOptions: {
+            title: 'Firebase Notification'
+        }
     },
     ActivityIndicatorComponent: {
-        screen: ActivityIndicatorComponent
+        screen: ActivityIndicatorComponent,
+        navigationOptions: {
+            title: 'Activity Indicator'
+        }
+    },
+    NetInfoCheck: {
+        screen: NetInfoCheck,
+        navigationOptions: {
+            title: 'Net Info'
+        }
     }
 }, {
     lazy: true,
     tabBarOptions: {
         labelStyle: {
             fontSize: 16,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: 'black'
         },
-        // tabStyle: {
-        //   width: 100,
-        // },
+        scrollEnabled: true,
+
+        tabStyle: {
+            // width: 100,
+        },
         // style: {
         //   backgroundColor: 'blue',
         // },

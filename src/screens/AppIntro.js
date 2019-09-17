@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Alert, ActivityIndicator } from 'react-native'
 import AppIntroSlider from 'react-native-app-intro-slider'
 import Styled from 'styled-components'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import AsyncStorage from '@react-native-community/async-storage'
 
 const MainView = Styled.View`
 flex: 1
@@ -114,27 +116,78 @@ doneButton = () => {
         </ButtonView>
     )
 }
-onDone = (props) => {
-    props.navigation.navigate('TabNavigator')
+onDone = async (props) => {
+    try {
+        await AsyncStorage.setItem('FirstVisit', 'done');
+        props.navigation.navigate('TabNavigator')
+    } catch (error) {
+        Alert.alert('Error during saving data in async storage !!');
+    }
 }
-
 function AppIntro(props) {
-    return (
-        <AppIntroSlider
-            slides={slides}
-            showPrevButton={true}
-            showSkipButton={true}
-            renderItem={this._renderItem}
-            renderPrevButton={this.prevButton}
-            renderNextButton={this.nextButton}
-            renderDoneButton={this.doneButton}
-            onDone={() => this.onDone(props)}
-            onSkip={() => this.onDone(props)}
-            style={{ backgroundColor: 'white' }}
-            activeDotStyle={{ backgroundColor: 'rgba(0, 0, 0, 1)', }}
-            dotStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-            buttonTextStyle={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}
-        />
-    )
+    const [stateValue, setStateValue] = useState({
+        showRealApp: false,
+        loading: true
+    })
+
+    // The blow code throw an error like React Hook Warnings for async function in useEffect:
+    // useEffect function must return a cleanup function or nothing
+
+    // useEffect(async () => {
+    //     try {
+    //         const value = await AsyncStorage.getItem('FirstVisit');
+    //         if (value === 'done') {
+    //             setStateValue({ ...stateValue, loading: false })
+    //             props.navigation.navigate('TabNavigator')
+    //         }
+    //         else {
+    //             setStateValue({ ...stateValue, loading: false })
+    //         }
+    //     } catch (error) {
+    //         Alert.alert('Error during getting data from async storage !!');
+    //     }
+    // }, [])
+
+    useEffect(() => {
+        customLogic = async () => {
+            try {
+                const value = await AsyncStorage.getItem('FirstVisit');
+                if (value === 'done') {
+                    setStateValue({ ...stateValue, loading: false })
+                    props.navigation.navigate('TabNavigator')
+                }
+                else {
+                    setStateValue({ ...stateValue, loading: false })
+                }
+            } catch (error) {
+                Alert.alert('Error during getting data from async storage !!');
+            }
+        }
+        customLogic();
+    }, [])
+
+    if (stateValue.loading) return <ActivityIndicator size="large" />
+
+    //If false show the Intro Slides
+    else {
+        //Real Application
+        return (
+            <AppIntroSlider
+                slides={slides}
+                showPrevButton={true}
+                showSkipButton={true}
+                renderItem={this._renderItem}
+                renderPrevButton={this.prevButton}
+                renderNextButton={this.nextButton}
+                renderDoneButton={this.doneButton}
+                onDone={() => this.onDone(props)}
+                onSkip={() => this.onDone(props)}
+                style={{ backgroundColor: 'white' }}
+                activeDotStyle={{ backgroundColor: 'rgba(0, 0, 0, 1)', }}
+                dotStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+                buttonTextStyle={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}
+            />
+        );
+    }
 }
 export default AppIntro

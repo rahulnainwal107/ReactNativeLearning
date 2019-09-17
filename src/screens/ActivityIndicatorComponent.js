@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react'
+import React, { useReducer } from 'react'
 import { ActivityIndicator, View } from 'react-native'
 import Styled from 'styled-components/native'
 
@@ -9,7 +9,6 @@ align-items:center;
 flex:1;
 `
 const CardView = Styled.View`
-border-top-left-radius:20px;
 border-bottom-right-radius:20px;
 border-color: #5DB5EB;
 border-width: 1 ;
@@ -44,6 +43,7 @@ function ActivityIndicatorComponent() {
     const [show1, dispatch1] = useReducer(reducer, inititalState);
     const [show2, dispatch2] = useReducer(reducer, inititalState);
     const [show3, dispatch3] = useReducer(reducer, inititalState);
+
     return (
         <MainView>
             <CardView >
