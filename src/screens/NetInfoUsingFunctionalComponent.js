@@ -1,8 +1,7 @@
-import React from 'react'
-import { Dimensions, Platform } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Dimensions } from 'react-native'
 import NetInfo from '@react-native-community/netinfo'
 import styled from 'styled-components'
-
 
 const MainView = styled.View`
 flex:1;
@@ -20,17 +19,16 @@ align-items:center;
 const TextView = styled.Text`
 
 `
-class NetInfoCheck extends React.Component {
-    state = {
-        isConnected: ''
-    }
-    componentDidMount() {
+
+function NetInfoUsingFunctionalComponent() {
+    const [check, setConnected] = useState({ isConnected: '' })
+    useEffect(() => {
         NetInfo.isConnected.fetch().done((isConnected) => {
             if (isConnected == true) {
-                this.setState({ isConnected: "Online" })
+                setConnected({ isConnected: "Online" })
             }
             else {
-                this.setState({ isConnected: "Offline" })
+                setConnected({ isConnected: "Offline" })
             }
         });
 
@@ -39,29 +37,25 @@ class NetInfoCheck extends React.Component {
             this._handleConnectivityChange
 
         );
-    }
-    componentWillUnmount() {
-        NetInfo.removeEventListener('connectionChange', this._handleConnectivityChange);
-    }
+        return NetInfo.removeEventListener('connectionChange', this._handleConnectivityChange);
+    }, [])
     _handleConnectivityChange = (isConnectionOk) => {
         if (isConnectionOk == true) {
-            this.setState({ isConnected: "Online" })
+            setConnected({ isConnected: "Online" })
             console.log("Online");
         }
         else {
-            this.setState({ isConnected: "Offline" })
+            setConnected({ isConnected: "Offline" })
             console.log("Offline");
         }
     };
-    render() {
-        return (
-            <MainView>
-                <CardView style={{ backgroundColor: this.state.isConnected === 'Online' ? 'green' : 'red' }}>
-                    <TextView>{this.state.isConnected}</TextView>
-                </CardView>
-            </MainView >
-        )
-    }
+    return (
+        <MainView>
+            <CardView style={{ backgroundColor: check.isConnected === 'Online' ? 'green' : 'red' }}>
+                <TextView>{check.isConnected}</TextView>
+            </CardView>
+        </MainView >
+    )
 }
 
-export default NetInfoCheck
+export default NetInfoUsingFunctionalComponent

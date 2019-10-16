@@ -1,12 +1,13 @@
 import React, { useReducer } from 'react'
-import { ActivityIndicator, View, Dimensions,Text } from 'react-native'
+import { ActivityIndicator, View, Dimensions, Text, Modal, TouchableOpacity } from 'react-native'
 import Styled from 'styled-components/native'
+import { Header } from 'react-navigation-stack'
+
+import ModalComponent from '../components/ModalComponent'
 
 const MainView = Styled.View`
-padding:5px 5px 5px 5px;
-justify-content:center;
-align-items:center;
 flex:1;
+padding:10px 10px 10px 10px;
 `
 const CardView = Styled.View`
 border-bottom-right-radius:20px;
@@ -40,26 +41,17 @@ const reducer = (state, action) => {
     }
 }
 function ActivityIndicatorComponent() {
-    const [show1, dispatch1] = useReducer(reducer, inititalState);
-    const [show2, dispatch2] = useReducer(reducer, inititalState);
     const [show3, dispatch3] = useReducer(reducer, inititalState);
-
+    const handleModalClose = () => {
+        dispatch3('hideIndicator');
+    }
     return (
-        <MainView>
+        <MainView style={{ backgroundColor: (show3 ? 'black' : null), opacity: (show3 ? 0.6 : 1) }}>
             <CardView >
                 <View style={{ height: 50, backgroundColor: '#5DB5EB', alignItems: 'center', justifyContent: 'center', padding: 10 }}>
-                    < TextView style={{ fontSize: 24, fontWeight: 'bold' }}>ActivityIndicator in React Native</TextView >
+                    < TextView style={{ fontSize: 18, fontWeight: 'bold' }}>ActivityIndicator in React Native</TextView >
                 </View>
                 <View style={{ padding: 20 }}>
-                    <ButtonView onPress={() => dispatch1('showIndicator')}>
-                        {show1 ? <ActivityIndicator size="small" color="#F92205" /> : <TextView>Button1</TextView>}
-                    </ButtonView>
-                    <ButtonView onPress={() => dispatch2('showIndicator')}>
-                        {show2 ? <ActivityIndicator size="small" color="#040100" /> : <TextView>Button2</TextView>}
-                    </ButtonView>
-                    <ButtonView onPress={show1 ? () => dispatch1('hideIndicator') : () => dispatch2('hideIndicator')}>
-                        <TextView>Cancle</TextView>
-                    </ButtonView>
                     <ButtonView onPress={() => dispatch3('showIndicator')}>
                         <TextView>Full Indicator</TextView>
                     </ButtonView>
@@ -68,11 +60,15 @@ function ActivityIndicatorComponent() {
                     </ButtonView>
                 </View>
             </CardView>
-            {show3 && <View style={{
-                position: 'absolute', backgroundColor: 'rgba(0,0,0,.6)', height: Dimensions.get('window').height, width: Dimensions.get('window').width, justifyContent: 'center', alignItems: 'center'
-            }}>
-                <ActivityIndicator size="large" color="#F92205" />
-            </View>}
+            <ModalComponent visible={show3} transparent={true} animationType="fade" onDismiss={handleModalClose} onRequestClose={handleModalClose} presentationStyle='overFullScreen' />
+            {/* <Modal visible={show3} transparent={true} animationType="fade" onDismiss={() => dispatch3('hideIndicator')} onRequestClose={handleModalClose} presentationStyle='overFullScreen'>
+                <TouchableOpacity style={{ alignItems: 'flex-end', padding: 10, margin: 10, }} onPress={() => dispatch3('hideIndicator')}>
+                    <Text style={{ backgroundColor: 'black', color: 'white', elevation: 5, width: 20, height: 20, textAlign: 'center', borderRadius: 10 }}>X</Text>
+                </TouchableOpacity>
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <ActivityIndicator size="large" color="#F92205" />
+                </View>
+            </Modal> */}
         </MainView >
     )
 }

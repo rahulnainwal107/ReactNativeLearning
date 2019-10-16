@@ -4,7 +4,8 @@ import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
 import FirebaseNotification from '../screens/FirebaseNotification';
 import ActivityIndicatorComponent from '../screens/ActivityIndicatorComponent';
-import NetInfoCheck from '../screens/NetInfoCheck'
+import NetInfoCheck from '../screens/NetInfoCheck';
+import NetInfoUsingFunctionalComponent from '../screens/NetInfoUsingFunctionalComponent';
 
 export default class App extends React.Component {
     render() {
@@ -30,6 +31,12 @@ const TopTabNavigation = createMaterialTopTabNavigator({
         screen: NetInfoCheck,
         navigationOptions: {
             title: 'Net Info'
+        }
+    },
+    NetInfoCheck1: {
+        screen: NetInfoUsingFunctionalComponent,
+        navigationOptions: {
+            title: 'Net Info (FC)'
         }
     }
 }, {

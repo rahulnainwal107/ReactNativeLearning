@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
 
-import TabNavigator from './TabNavigator';
+import ViewRouter from './ViewsRouter';
 import AppIntro from '../screens/AppIntro';
 
 export default class App extends React.Component {
@@ -16,8 +16,8 @@ const StackNavigator = createStackNavigator({
     AppIntro: {
         screen: AppIntro
     },
-    TabNavigator: {
-        screen: TabNavigator
+    ViewRouter: {
+        screen: ViewRouter
     }
 }, {
     initialRouteName: 'AppIntro',

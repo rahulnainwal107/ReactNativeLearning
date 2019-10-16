@@ -119,7 +119,7 @@ doneButton = () => {
 onDone = async (props) => {
     try {
         await AsyncStorage.setItem('FirstVisit', 'done');
-        props.navigation.navigate('TabNavigator')
+        props.navigation.navigate('ViewRouter')
     } catch (error) {
         Alert.alert('Error during saving data in async storage !!');
     }
@@ -154,7 +154,7 @@ function AppIntro(props) {
                 const value = await AsyncStorage.getItem('FirstVisit');
                 if (value === 'done') {
                     setStateValue({ ...stateValue, loading: false })
-                    props.navigation.navigate('TabNavigator')
+                    props.navigation.navigate('ViewRouter')
                 }
                 else {
                     setStateValue({ ...stateValue, loading: false })
