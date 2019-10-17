@@ -1,0 +1,29 @@
+import React from 'react'
+import { View, Text, Button } from 'react-native'
+function ButtonScreen(props) {
+    const tabNavigator = () => {
+        props.navigation.navigate('TabNavigator');
+    }
+    const userExperience = () => {
+        props.navigation.navigate('UserExperience');
+    }
+    const customActivityIndicator = () => {
+        props.navigation.navigate('AcitvityIndicatorWithCancel');
+    }
+    const screenOverlay = () => {
+        props.navigation.navigate('ScreenOverlay')
+    }
+    const archiveOnCloudScreen = () => {
+        props.navigation.navigate('ArchiveOnCloudScreen');
+    }
+    return (
+        <View>
+            <Button title="Tab Screen" onPress={tabNavigator}></Button>
+            <Button title="User Experience" onPress={userExperience}></Button>
+            <Button title="Custom Activity Indicator" onPress={customActivityIndicator}></Button>
+            <Button title="Screen Overlay" onPress={screenOverlay}></Button>
+            <Button title="Archive On Cloud Screen" onPress={archiveOnCloudScreen}></Button>
+        </View>
+    )
+}
+export default ButtonScreen;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, Button, KeyboardAvoidingView, TouchableNativeFeedback, Alert } from 'react-native'
 const onPressButton = () => {
-    Alert.alert('Sign in !!');
+    console.log('Sign In...!!');
 }
 function UserExperience() {
     let firstTextInput = null;
@@ -27,12 +27,17 @@ function UserExperience() {
                 onChangeText={text => setUsename(usename.password = text)} keyboardType="number-pad"
                 value={usename.password} placeholder="Password"
                 ref={(input) => { secondTextInput = input; }}
-                returnKeyType={"submit"} secureTextEntry={true} />
+                returnKeyType={"go"} secureTextEntry={true} />
             <Button title="Submit" />
-            <KeyboardAvoidingView style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10, padding: 10 }}>
+            <KeyboardAvoidingView style={{ flex: 1, justifyContent: 'flex-end', margin: 10, padding: 10 }}>
                 <TouchableNativeFeedback onPress={onPressButton}
-                    background='green'>
-                    <Text>New user sign in?</Text>
+                    background={TouchableNativeFeedback.Ripple('red')}
+                    //background={TouchableNativeFeedback.SelectableBackground('red')}
+                    //useForeground={true}
+                >
+                    <View style={{ height: 40, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center' }}>
+                        <Text >New user sign in?</Text>
+                    </View>
                 </TouchableNativeFeedback>
             </KeyboardAvoidingView>
         </View>

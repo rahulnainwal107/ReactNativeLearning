@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import { ActivityIndicator, View, Dimensions, Text, Modal, TouchableOpacity } from 'react-native'
 import Styled from 'styled-components/native'
 import { Header } from 'react-navigation-stack'
@@ -42,6 +42,12 @@ const reducer = (state, action) => {
 }
 function ActivityIndicatorComponent() {
     const [show3, dispatch3] = useReducer(reducer, inititalState);
+    useEffect(() => {
+
+    }, [show3])
+    const handleModalOpen = () => {
+        dispatch3('showIndicator');
+    }
     const handleModalClose = () => {
         dispatch3('hideIndicator');
     }
@@ -52,17 +58,17 @@ function ActivityIndicatorComponent() {
                     < TextView style={{ fontSize: 18, fontWeight: 'bold' }}>ActivityIndicator in React Native</TextView >
                 </View>
                 <View style={{ padding: 20 }}>
-                    <ButtonView onPress={() => dispatch3('showIndicator')}>
+                    <ButtonView onPress={handleModalOpen}>
                         <TextView>Full Indicator</TextView>
                     </ButtonView>
-                    <ButtonView onPress={() => dispatch3('hideIndicator')}>
+                    <ButtonView onPress={handleModalClose}>
                         <TextView>Cancle Full Indicator</TextView>
                     </ButtonView>
                 </View>
             </CardView>
             <ModalComponent visible={show3} transparent={true} animationType="fade" onDismiss={handleModalClose} onRequestClose={handleModalClose} presentationStyle='overFullScreen' />
-            {/* <Modal visible={show3} transparent={true} animationType="fade" onDismiss={() => dispatch3('hideIndicator')} onRequestClose={handleModalClose} presentationStyle='overFullScreen'>
-                <TouchableOpacity style={{ alignItems: 'flex-end', padding: 10, margin: 10, }} onPress={() => dispatch3('hideIndicator')}>
+            {/* <Modal visible={show3} transparent={true} animationType="fade" onDismiss={handleModalClose} onRequestClose={handleModalClose} presentationStyle='overFullScreen'>
+                <TouchableOpacity style={{ alignItems: 'flex-end', padding: 10, margin: 10, }} onPress={handleModalClose}>
                     <Text style={{ backgroundColor: 'black', color: 'white', elevation: 5, width: 20, height: 20, textAlign: 'center', borderRadius: 10 }}>X</Text>
                 </TouchableOpacity>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

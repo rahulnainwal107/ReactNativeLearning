@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Alert, Button, ActivityIndicator } from 'react-native';
 
 var { width, height } = Dimensions.get('window');
-
+var alertFunction = () => {
+    console.log('Hello !!')
+}
 var ScreenOverlay = () => {
-    const [isVisible, setVisible] = useState(false)
+    const [isVisible, setVisible] = useState(false);
+    const setVisibleChange = () => {
+        setVisible(true);
+    }
+    useEffect(() => {
+
+    }, []);
     return (
         <View style={styles.container}>
             <Text style={styles.welcome}>
                 Welcome to the React Native Playground!
                 </Text>
-            <Button title='Indicator' onPress={() => setVisible(true)}></Button>
+            <Button title='Indicator' onPress={setVisibleChange}></Button>
             {isVisible ? <View style={[styles.overlay, { height: height }]} >
                 <TouchableOpacity style={{ margin: 5, alignItems: 'flex-end', justifyContent: 'center' }}
-                    onPress={() => Alert.alert('Hello')}>
+                    onPress={alertFunction}>
                     <Text style={{ backgroundColor: '#fff', padding: 5, borderRadius: 10 }}>X</Text>
                 </TouchableOpacity>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

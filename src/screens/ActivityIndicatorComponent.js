@@ -1,5 +1,5 @@
-import React, { useReducer } from 'react'
-import { ActivityIndicator, View, Dimensions,Text } from 'react-native'
+import React, { useReducer, useEffect } from 'react'
+import { ActivityIndicator, View, Dimensions, Text } from 'react-native'
 import Styled from 'styled-components/native'
 
 const MainView = Styled.View`
@@ -43,7 +43,28 @@ function ActivityIndicatorComponent() {
     const [show1, dispatch1] = useReducer(reducer, inititalState);
     const [show2, dispatch2] = useReducer(reducer, inititalState);
     const [show3, dispatch3] = useReducer(reducer, inititalState);
+    console.log('Activity Indicator is running............... !!')
+    useEffect(() => {
 
+    }, [show1, show2, show3])
+    const showLoader1 = () => {
+        dispatch1('showIndicator')
+    }
+    const hideLoader1 = () => {
+        dispatch1('hideIndicator')
+    }
+    const showLoader2 = () => {
+        dispatch2('showIndicator')
+    }
+    const hideLoader2 = () => {
+        dispatch2('hideIndicator')
+    }
+    const showLoader3 = () => {
+        dispatch3('showIndicator')
+    }
+    const hideLoader3 = () => {
+        dispatch3('hideIndicator')
+    }
     return (
         <MainView>
             <CardView >
@@ -51,19 +72,19 @@ function ActivityIndicatorComponent() {
                     < TextView style={{ fontSize: 24, fontWeight: 'bold' }}>ActivityIndicator in React Native</TextView >
                 </View>
                 <View style={{ padding: 20 }}>
-                    <ButtonView onPress={() => dispatch1('showIndicator')}>
+                    <ButtonView onPress={showLoader1}>
                         {show1 ? <ActivityIndicator size="small" color="#F92205" /> : <TextView>Button1</TextView>}
                     </ButtonView>
-                    <ButtonView onPress={() => dispatch2('showIndicator')}>
+                    <ButtonView onPress={showLoader2}>
                         {show2 ? <ActivityIndicator size="small" color="#040100" /> : <TextView>Button2</TextView>}
                     </ButtonView>
-                    <ButtonView onPress={show1 ? () => dispatch1('hideIndicator') : () => dispatch2('hideIndicator')}>
+                    <ButtonView onPress={show1 ? hideLoader1 : hideLoader2}>
                         <TextView>Cancle</TextView>
                     </ButtonView>
-                    <ButtonView onPress={() => dispatch3('showIndicator')}>
+                    <ButtonView onPress={showLoader3}>
                         <TextView>Full Indicator</TextView>
                     </ButtonView>
-                    <ButtonView onPress={() => dispatch3('hideIndicator')}>
+                    <ButtonView onPress={hideLoader3}>
                         <TextView>Cancle Full Indicator</TextView>
                     </ButtonView>
                 </View>

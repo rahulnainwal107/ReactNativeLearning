@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, TouchableOpacity, Text, View, ActivityIndicator } from 'react-native'
-function ModalComponent(props) {
+const ModalComponent = (props) => {
     return (
         <Modal {...props}>
             <TouchableOpacity style={{ alignItems: 'flex-end', padding: 10, margin: 10, }} onPress={props.onDismiss}>
