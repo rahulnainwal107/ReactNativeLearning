@@ -57,4 +57,4 @@ const TopTabNavigation = createMaterialTopTabNavigator({
         // },
     }
 })
-const AppContainer = createAppContainer(TopTabNavigation)
+const AppContainer = createAppContainer(TopTabNavigation);

@@ -16,6 +16,9 @@ function ButtonScreen(props) {
     const archiveOnCloudScreen = () => {
         props.navigation.navigate('ArchiveOnCloudScreen');
     }
+    const sectionListExample=()=>{
+        props.navigation.navigate('SectionListExample')
+    }
     return (
         <View>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -23,6 +26,7 @@ function ButtonScreen(props) {
             <Button title="Custom Activity Indicator" onPress={customActivityIndicator}></Button>
             <Button title="Screen Overlay" onPress={screenOverlay}></Button>
             <Button title="Archive On Cloud Screen" onPress={archiveOnCloudScreen}></Button>
+            <Button title="Section List" onPress={sectionListExample}></Button>
         </View>
     )
 }

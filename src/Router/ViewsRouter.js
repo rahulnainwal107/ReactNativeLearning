@@ -6,7 +6,8 @@ import UserExperience from '../screens/UserExperience';
 import ButtonScreen from '../screens/ButtonScreen';
 import AcitvityIndicatorWithCancel from '../screens/ACtivityIndicatorWithCancel';
 import ScreenOverlay from '../screens/ScreenOverlay';
-import ArchiveOnCloudScreen from '../screens/ArchiveOnCloudScreen';
+import ArchiveOnCloudScreen from '../Router/ArchiveOnCloudTopNavigator';
+import SectionListExample from '../screens/SectionListExample';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -25,7 +26,16 @@ const AppStack = createStackNavigator({
         screen: ScreenOverlay
     },
     ArchiveOnCloudScreen: {
-        screen: ArchiveOnCloudScreen
+        screen: ArchiveOnCloudScreen,
+        navigationOptions: {
+            title: 'DASHBOARD',
+            headerStyle: {
+                backgroundColor: '#ff8c1a'
+            }
+        }
+    },
+    SectionListExample: {
+        screen: SectionListExample
     }
 }, {
     initialRouteName: 'ButtonScreen',

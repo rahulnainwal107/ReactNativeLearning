@@ -45,12 +45,12 @@ const SubTitle = styled.Text`
     font-size: 20px;
     color: #808080;
 `;
-const ArchiveOnCloudScreen = ({ item, index }) => {
+const MenuListItem = ({ item, index }) => {
     return (
         <MainView >
             <CardView>
                 <ImageContainer >
-                    <ImageView source={item.logo}/>
+                    <ImageView source={item.logo} />
                 </ImageContainer>
                 <ContentContainer >
                     <TitleView>{item.title}</TitleView>
@@ -61,4 +61,4 @@ const ArchiveOnCloudScreen = ({ item, index }) => {
         </MainView>
     )
 }
-export default ArchiveOnCloudScreen;
+export default MenuListItem;

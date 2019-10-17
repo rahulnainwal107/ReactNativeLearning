@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuList from '../components/MenuList'
+import MenuList from '../components/MenuList';
 
 const data = [{
     logo: require('../Images/logo5.png'),
@@ -35,6 +35,7 @@ const data = [{
     },
     subtitle: 'This Month'
 }];
+
 const ArchiveOnCloudScreen = () => {
     return (
         <MenuList
@@ -43,8 +44,10 @@ const ArchiveOnCloudScreen = () => {
     )
 }
 
-// navigationOptions in functional component.
 
+
+
+// navigationOptions in functional component.
 ArchiveOnCloudScreen.navigationOptions = {
     title: 'DASHBOARD',
     headerStyle: {
