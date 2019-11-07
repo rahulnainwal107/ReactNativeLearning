@@ -188,7 +188,6 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-charts-wrapper')
     implementation project(':@react-native-community_netinfo')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-firebase')

@@ -8,6 +8,8 @@ import AcitvityIndicatorWithCancel from '../screens/ACtivityIndicatorWithCancel'
 import ScreenOverlay from '../screens/ScreenOverlay';
 import ArchiveOnCloudScreen from '../Router/ArchiveOnCloudTopNavigator';
 import SectionListExample from '../screens/SectionListExample';
+import BarChart from '../screens/BarChartScreen';
+import FloatingButton from '../screens/FloatingButton';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -36,6 +38,12 @@ const AppStack = createStackNavigator({
     },
     SectionListExample: {
         screen: SectionListExample
+    },
+    BarChart: {
+        screen: BarChart
+    },
+    FloatingButton: {
+        screen: FloatingButton
     }
 }, {
     initialRouteName: 'ButtonScreen',
