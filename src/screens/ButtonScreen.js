@@ -28,6 +28,9 @@ function ButtonScreen(props) {
     const animatedView = () => {
         props.navigation.navigate('AnimatedView');
     }
+    const showHideViewOnScroll = () => {
+        props.navigation.navigate('ShowHideViewOnScroll');
+    }
     return (
         <View>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -38,7 +41,8 @@ function ButtonScreen(props) {
             <Button title="Section List" onPress={sectionListExample}></Button>
             <Button title="Bar Chart" onPress={BarChart}></Button>
             <Button title="Floating Button" onPress={floatingButton}></Button>
-            <Button title="AnimatedView" onPress={animatedView}></Button>
+            <Button title="Animated View" onPress={animatedView}></Button>
+            <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
         </View>
     )
 }

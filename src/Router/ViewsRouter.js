@@ -11,6 +11,7 @@ import SectionListExample from '../screens/SectionListExample';
 import BarChart from '../screens/BarChartScreen';
 import FloatingButton from '../screens/FloatingButton';
 import AnimatedView from '../screens/AnimatedView';
+import ShowHideViewOnScroll from '../screens/ShowHideViewOnScroll';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -48,6 +49,9 @@ const AppStack = createStackNavigator({
     },
     AnimatedView: {
         screen: AnimatedView
+    },
+    ShowHideViewOnScroll: {
+        screen: ShowHideViewOnScroll
     }
 }, {
     initialRouteName: 'ButtonScreen',
