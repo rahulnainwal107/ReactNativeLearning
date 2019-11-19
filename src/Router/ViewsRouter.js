@@ -10,6 +10,7 @@ import ArchiveOnCloudScreen from '../Router/ArchiveOnCloudTopNavigator';
 import SectionListExample from '../screens/SectionListExample';
 import BarChart from '../screens/BarChartScreen';
 import FloatingButton from '../screens/FloatingButton';
+import AnimatedView from '../screens/AnimatedView';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -44,6 +45,9 @@ const AppStack = createStackNavigator({
     },
     FloatingButton: {
         screen: FloatingButton
+    },
+    AnimatedView: {
+        screen: AnimatedView
     }
 }, {
     initialRouteName: 'ButtonScreen',
