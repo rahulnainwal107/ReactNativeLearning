@@ -31,6 +31,9 @@ function ButtonScreen(props) {
     const showHideViewOnScroll = () => {
         props.navigation.navigate('ShowHideViewOnScroll');
     }
+    const floatingActionButton = () => {
+        props.navigation.navigate('FloatingActionButton');
+    }
     return (
         <View>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -43,6 +46,7 @@ function ButtonScreen(props) {
             <Button title="Floating Button" onPress={floatingButton}></Button>
             <Button title="Animated View" onPress={animatedView}></Button>
             <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
+            <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
         </View>
     )
 }
