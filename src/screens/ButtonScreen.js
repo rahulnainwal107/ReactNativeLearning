@@ -34,6 +34,12 @@ function ButtonScreen(props) {
     const floatingActionButton = () => {
         props.navigation.navigate('FloatingActionButton');
     }
+    const reactNativeCollapsible = () => {
+        props.navigation.navigate('ReactNativeCollapsible');
+    }
+    const reactNativeCollapsible1 = () => {
+        props.navigation.navigate('ReactNativeCollapsible1');
+    }
     return (
         <View>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -47,6 +53,8 @@ function ButtonScreen(props) {
             <Button title="Animated View" onPress={animatedView}></Button>
             <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
             <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
+            <Button title="React Native Collapsible" onPress={reactNativeCollapsible}></Button>
+            <Button title="React Native Collapsible1" onPress={reactNativeCollapsible1}></Button>
         </View>
     )
 }

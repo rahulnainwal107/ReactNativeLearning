@@ -13,6 +13,8 @@ import FloatingButton from '../screens/FloatingButton';
 import AnimatedView from '../screens/AnimatedView';
 import ShowHideViewOnScroll from '../screens/ShowHideViewOnScroll';
 import FloatingActionButton from '../screens/FloatingActionButton';
+import ReactNativeCollapsible from '../screens/ReactNativeCollapsible';
+import ReactNativeCollapsible1 from '../screens/ReactNativeCollapsible1';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -56,6 +58,12 @@ const AppStack = createStackNavigator({
     },
     FloatingActionButton: {
         screen: FloatingActionButton
+    },
+    ReactNativeCollapsible: {
+        screen: ReactNativeCollapsible
+    },
+    ReactNativeCollapsible1: {
+        screen: ReactNativeCollapsible1
     }
 }, {
     initialRouteName: 'ButtonScreen',
