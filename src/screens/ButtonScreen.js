@@ -40,6 +40,15 @@ function ButtonScreen(props) {
     const reactNativeCollapsible1 = () => {
         props.navigation.navigate('ReactNativeCollapsible1');
     }
+    const paymentModal = () => {
+        props.navigation.navigate('PaymentModal');
+    }
+    const creditCardInput = () => {
+        props.navigation.navigate('CreditCardInput');
+    }
+    const cardInput = () => {
+        props.navigation.navigate('CardInput');
+    }
     return (
         <View>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -55,6 +64,9 @@ function ButtonScreen(props) {
             <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
             <Button title="React Native Collapsible" onPress={reactNativeCollapsible}></Button>
             <Button title="React Native Collapsible1" onPress={reactNativeCollapsible1}></Button>
+            <Button title="Payment Modal" onPress={paymentModal}></Button>
+            <Button title="Credit Card Input" onPress={creditCardInput}></Button>
+            <Button title="Credit Input" onPress={cardInput}></Button>
         </View>
     )
 }

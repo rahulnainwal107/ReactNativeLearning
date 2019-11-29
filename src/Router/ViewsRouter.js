@@ -15,6 +15,9 @@ import ShowHideViewOnScroll from '../screens/ShowHideViewOnScroll';
 import FloatingActionButton from '../screens/FloatingActionButton';
 import ReactNativeCollapsible from '../screens/ReactNativeCollapsible';
 import ReactNativeCollapsible1 from '../screens/ReactNativeCollapsible1';
+import PaymentModal from '../screens/PaymentModal';
+import CreditCardInput from '../screens/CreditCardInput';
+import CardInput from '../screens/CardInput';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -64,6 +67,15 @@ const AppStack = createStackNavigator({
     },
     ReactNativeCollapsible1: {
         screen: ReactNativeCollapsible1
+    },
+    PaymentModal: {
+        screen: PaymentModal
+    },
+    CreditCardInput: {
+        screen: CreditCardInput
+    },
+    CardInput: {
+        screen: CardInput
     }
 }, {
     initialRouteName: 'ButtonScreen',
