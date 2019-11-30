@@ -19,11 +19,14 @@ function ButtonScreen(props) {
     const sectionListExample = () => {
         props.navigation.navigate('SectionListExample');
     }
-    const BarChart = () => {
+    const barChart = () => {
         props.navigation.navigate('BarChart');
     }
     const floatingButton = () => {
         props.navigation.navigate('FloatingButton');
+    }
+    const drawerNavigation = ()=>{
+        props.navigation.navigate('DrawerNavigation');
     }
     return (
         <View>
@@ -33,8 +36,9 @@ function ButtonScreen(props) {
             <Button title="Screen Overlay" onPress={screenOverlay}></Button>
             <Button title="Archive On Cloud Screen" onPress={archiveOnCloudScreen}></Button>
             <Button title="Section List" onPress={sectionListExample}></Button>
-            <Button title="Bar Chart" onPress={BarChart}></Button>
+            <Button title="Bar Chart" onPress={barChart}></Button>
             <Button title="Floating Button" onPress={floatingButton}></Button>
+            <Button title="Floating Button" onPress={drawerNavigation}></Button>
         </View>
     )
 }
