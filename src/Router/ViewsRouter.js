@@ -11,6 +11,14 @@ import SectionListExample from '../screens/SectionListExample';
 import BarChart from '../screens/BarChartScreen';
 import FloatingButton from '../screens/FloatingButton';
 import DrawerNavigation from '../screens/DrawerNavigation';
+import AnimatedView from '../screens/AnimatedView';
+import ShowHideViewOnScroll from '../screens/ShowHideViewOnScroll';
+import FloatingActionButton from '../screens/FloatingActionButton';
+import ReactNativeCollapsible from '../screens/ReactNativeCollapsible';
+import ReactNativeCollapsible1 from '../screens/ReactNativeCollapsible1';
+import PaymentModal from '../screens/PaymentModal';
+import CreditCardInput from '../screens/CreditCardInput';
+import CardInput from '../screens/CardInput';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -48,6 +56,30 @@ const AppStack = createStackNavigator({
     },
     DrawerNavigation:{
         screen:DrawerNavigation
+    },
+    AnimatedView: {
+        screen: AnimatedView
+    },
+    ShowHideViewOnScroll: {
+        screen: ShowHideViewOnScroll
+    },
+    FloatingActionButton: {
+        screen: FloatingActionButton
+    },
+    ReactNativeCollapsible: {
+        screen: ReactNativeCollapsible
+    },
+    ReactNativeCollapsible1: {
+        screen: ReactNativeCollapsible1
+    },
+    PaymentModal: {
+        screen: PaymentModal
+    },
+    CreditCardInput: {
+        screen: CreditCardInput
+    },
+    CardInput: {
+        screen: CardInput
     }
 }, {
     initialRouteName: 'ButtonScreen',

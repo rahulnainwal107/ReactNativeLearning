@@ -27,6 +27,29 @@ function ButtonScreen(props) {
     }
     const drawerNavigation = ()=>{
         props.navigation.navigate('DrawerNavigation');
+    const animatedView = () => {
+        props.navigation.navigate('AnimatedView');
+    }
+    const showHideViewOnScroll = () => {
+        props.navigation.navigate('ShowHideViewOnScroll');
+    }
+    const floatingActionButton = () => {
+        props.navigation.navigate('FloatingActionButton');
+    }
+    const reactNativeCollapsible = () => {
+        props.navigation.navigate('ReactNativeCollapsible');
+    }
+    const reactNativeCollapsible1 = () => {
+        props.navigation.navigate('ReactNativeCollapsible1');
+    }
+    const paymentModal = () => {
+        props.navigation.navigate('PaymentModal');
+    }
+    const creditCardInput = () => {
+        props.navigation.navigate('CreditCardInput');
+    }
+    const cardInput = () => {
+        props.navigation.navigate('CardInput');
     }
     return (
         <View>
@@ -38,7 +61,18 @@ function ButtonScreen(props) {
             <Button title="Section List" onPress={sectionListExample}></Button>
             <Button title="Bar Chart" onPress={barChart}></Button>
             <Button title="Floating Button" onPress={floatingButton}></Button>
+<<<<<<< HEAD
             <Button title="Floating Button" onPress={drawerNavigation}></Button>
+=======
+            <Button title="Animated View" onPress={animatedView}></Button>
+            <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
+            <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
+            <Button title="React Native Collapsible" onPress={reactNativeCollapsible}></Button>
+            <Button title="React Native Collapsible1" onPress={reactNativeCollapsible1}></Button>
+            <Button title="Payment Modal" onPress={paymentModal}></Button>
+            <Button title="Credit Card Input" onPress={creditCardInput}></Button>
+            <Button title="Credit Input" onPress={cardInput}></Button>
+>>>>>>> 9b18d37b5f3bd67c5a31d3e47b1ab0d292977ad1
         </View>
     )
 }
