@@ -31,11 +31,8 @@
     "react-native-svg": "^9.12.0",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.3",
-<<<<<<< HEAD
     "react-navigation-drawer": "^2.3.3",
-=======
     "react-navigation-collapsible": "^3.0.3",
->>>>>>> 9b18d37b5f3bd67c5a31d3e47b1ab0d292977ad1
     "react-navigation-stack": "^1.7.3",
     "react-navigation-tabs": "^2.4.2",
     "styled-components": "^4.4.1"

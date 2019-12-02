@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-function ButtonScreen(props) {
+
+const ButtonScreen = (props) => {
     const tabNavigator = () => {
         props.navigation.navigate('TabNavigator');
     }
@@ -25,8 +26,9 @@ function ButtonScreen(props) {
     const floatingButton = () => {
         props.navigation.navigate('FloatingButton');
     }
-    const drawerNavigation = ()=>{
+    const drawerNavigation = () => {
         props.navigation.navigate('DrawerNavigation');
+    }
     const animatedView = () => {
         props.navigation.navigate('AnimatedView');
     }
@@ -61,9 +63,7 @@ function ButtonScreen(props) {
             <Button title="Section List" onPress={sectionListExample}></Button>
             <Button title="Bar Chart" onPress={barChart}></Button>
             <Button title="Floating Button" onPress={floatingButton}></Button>
-<<<<<<< HEAD
             <Button title="Floating Button" onPress={drawerNavigation}></Button>
-=======
             <Button title="Animated View" onPress={animatedView}></Button>
             <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
             <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
@@ -72,7 +72,6 @@ function ButtonScreen(props) {
             <Button title="Payment Modal" onPress={paymentModal}></Button>
             <Button title="Credit Card Input" onPress={creditCardInput}></Button>
             <Button title="Credit Input" onPress={cardInput}></Button>
->>>>>>> 9b18d37b5f3bd67c5a31d3e47b1ab0d292977ad1
         </View>
     )
 }

@@ -178,19 +178,23 @@ const CardInput = (props) => {
         setState({ ...state, cardNumber: formattedText })
     }
     const setValidThru = (text) => {
+        console.log('length ' + state.validThru.length);
         let textTemp = text;
-        if (textTemp[0] !== '1' && textTemp[0] !== '0') {
-            textTemp = '';
+        if (textTemp[0] > 1) {
+            textTemp = '0' + textTemp[0];
         }
-        if (textTemp.length === 2) {
-            if (parseInt(textTemp.substring(0, 2)) > 12) {
-                textTemp = textTemp[0];
-            } else if (state.validThru.length === 1) {
-                textTemp += '/';
-            } else {
-                textTemp = textTemp[0];
-            }
+        if (textTemp.length === 2 && (state.validThru.length === 0 || state.validThru.length === 1)) {
+            textTemp += '/';
         }
+        // if (textTemp.length === 2) {
+        //     if (parseInt(textTemp.substring(0, 2)) > 12) {
+        //         textTemp = textTemp[0];
+        //     } else if (state.validThru.length === 0 || state.validThru.length === 1) {
+        //         textTemp += '/';
+        //     } else {
+        //         textTemp = textTemp;
+        //     }
+        // }
         setState({ ...state, validThru: textTemp })
     }
     const setCvv = (text) => {
@@ -263,9 +267,12 @@ const CardInput = (props) => {
                                 <WrapperIconView source={require('../icons/stp_card_unknown.png')} />
                             </WrapperIconContainerView>
                         </CardNumberAndIconWrapperView>
-
                         <TextView>Valid Thru</TextView>
-                        <InputText placeholder='MM/YY' keyboardType='numeric' value={state.validThru} onChangeText={setValidThru} maxLength={5} />
+                        <InputText placeholder='MM/YY' keyboardType='numeric' value={state.validThru} onChangeText={setValidThru} maxLength={5}
+                            style={{
+                                color: (parseInt(state.validThru.substring(0, 2)) > 12) || (parseInt(state.validThru.substring(0, 2)) === 0) ? 'red' : 'black',
+                                borderColor: (parseInt(state.validThru.substring(0, 2)) > 12) || (parseInt(state.validThru.substring(0, 2)) === 0) ? 'red' : 'black'
+                            }} />
                         <TextView >CVV Number</TextView>
                         <CardNumberAndIconWrapperView style={{ flexDirection: 'row', height: 40, borderWidth: 1, borderRadius: 2, margin: 5, alignItems: 'center' }}>
                             <WrapperTextInput placeholder='123' keyboardType='numeric' value={state.cvvNumber} onChangeText={setCvv} maxLength={3} />
