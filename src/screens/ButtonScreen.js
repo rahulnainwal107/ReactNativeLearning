@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, ScrollView } from 'react-native'
 
 const ButtonScreen = (props) => {
     const tabNavigator = () => {
@@ -54,7 +54,7 @@ const ButtonScreen = (props) => {
         props.navigation.navigate('CardInput');
     }
     return (
-        <View>
+        <ScrollView>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
             <Button title="User Experience" onPress={userExperience}></Button>
             <Button title="Custom Activity Indicator" onPress={customActivityIndicator}></Button>
@@ -72,7 +72,7 @@ const ButtonScreen = (props) => {
             <Button title="Payment Modal" onPress={paymentModal}></Button>
             <Button title="Credit Card Input" onPress={creditCardInput}></Button>
             <Button title="Credit Input" onPress={cardInput}></Button>
-        </View>
+        </ScrollView>
     )
 }
 export default ButtonScreen;
