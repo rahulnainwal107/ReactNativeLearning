@@ -19,6 +19,7 @@ import ReactNativeCollapsible1 from '../screens/ReactNativeCollapsible1';
 import PaymentModal from '../screens/PaymentModal';
 import CreditCardInput from '../screens/CreditCardInput';
 import CardInput from '../screens/CardInput';
+import SliderScreen from '../screens/SliderScreen';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -54,8 +55,8 @@ const AppStack = createStackNavigator({
     FloatingButton: {
         screen: FloatingButton
     },
-    DrawerNavigation:{
-        screen:DrawerNavigation
+    DrawerNavigation: {
+        screen: DrawerNavigation
     },
     AnimatedView: {
         screen: AnimatedView
@@ -80,6 +81,9 @@ const AppStack = createStackNavigator({
     },
     CardInput: {
         screen: CardInput
+    },
+    SliderScreen: {
+        screen: SliderScreen
     }
 }, {
     initialRouteName: 'ButtonScreen',

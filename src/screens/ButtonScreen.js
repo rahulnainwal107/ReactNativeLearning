@@ -53,6 +53,9 @@ const ButtonScreen = (props) => {
     const cardInput = () => {
         props.navigation.navigate('CardInput');
     }
+    const sliderScreen = () => {
+        props.navigation.navigate('SliderScreen');
+    }
     return (
         <ScrollView>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -72,6 +75,7 @@ const ButtonScreen = (props) => {
             <Button title="Payment Modal" onPress={paymentModal}></Button>
             <Button title="Credit Card Input" onPress={creditCardInput}></Button>
             <Button title="Credit Input" onPress={cardInput}></Button>
+            <Button title="Slider Screen" onPress={sliderScreen}></Button>
         </ScrollView>
     )
 }
