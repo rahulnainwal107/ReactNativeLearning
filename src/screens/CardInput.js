@@ -202,7 +202,6 @@ const CardInput = (props) => {
         setState({ ...state, cardNumber: formattedText })
     }
     const setValidThru = (text) => {
-        console.log('length ' + state.validThru.length);
         let textTemp = text;
         if (textTemp[0] > 1) {
             textTemp = '0' + textTemp[0];
@@ -294,8 +293,8 @@ const CardInput = (props) => {
                         <TextView>Valid Thru</TextView>
                         <InputText placeholder='MM/YY' keyboardType='numeric' value={state.validThru} onChangeText={setValidThru} maxLength={5}
                             style={{
-                                color: (parseInt(state.validThru.substring(0, 2)) > 12) || (parseInt(state.validThru.substring(0, 2)) === 0) ? 'red' : 'black',
-                                borderColor: (parseInt(state.validThru.substring(0, 2)) > 12) || (parseInt(state.validThru.substring(0, 2)) === 0) ? 'red' : 'black'
+                                color: (parseInt(state.validThru.substring(0, 2)) > 12) || (parseInt(state.validThru.substring(0, 2)) === 0) || (state.validThru.length >= 2 && state.validThru.charAt(2) !== '/') ? 'red' : 'black',
+                                borderColor: (parseInt(state.validThru.substring(0, 2)) > 12) || (parseInt(state.validThru.substring(0, 2)) === 0) || (state.validThru.length >= 2 && state.validThru.charAt(2) !== '/') ? 'red' : 'black'
                             }} />
                         <TextView >CVV Number</TextView>
                         <CardNumberAndIconWrapperView style={{ flexDirection: 'row', height: 40, borderWidth: 1, borderRadius: 2, margin: 5, alignItems: 'center' }}>
