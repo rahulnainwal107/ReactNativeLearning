@@ -158,6 +158,30 @@ const savedCard = [{
     cardNumber: 2323223223344547,
     cardType: require('../icons/stp_card_discover.png'),
     default: false
+},
+{
+    id: 5,
+    cardNumber: 2323223223344547,
+    cardType: require('../icons/stp_card_visa.png'),
+    default: true
+},
+{
+    id: 6,
+    cardNumber: 2323223223344547,
+    cardType: require('../icons/stp_card_mastercard.png'),
+    default: false
+},
+{
+    id: 7,
+    cardNumber: 2323223223344547,
+    cardType: require('../icons/stp_card_jcb.png'),
+    default: false
+},
+{
+    id: 8,
+    cardNumber: 2323223223344547,
+    cardType: require('../icons/stp_card_discover.png'),
+    default: false
 }
 ]
 const CardInput = (props) => {
@@ -307,7 +331,7 @@ const CardInput = (props) => {
                                 <TextView>X</TextView>
                             </CloseButton>
                         </CloseButtonView> */}
-                        <FlatListView >
+                        <FlatListView style={{ height: 250 }}>
                             <FlatList
                                 data={savedCard}
                                 keyExtractor={(item, index) => `${index}`}
