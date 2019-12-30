@@ -45,10 +45,18 @@
     android:name="com.google.firebase.messaging.default_notification_color"
     android:resource="@color/notificationColor" />
   -->
-
-    <meta-data
-      android:name="com.google.firebase.messaging.default_notification_channel_id"
-      android:value="@string/default_notification_channel_id"/>
+        <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
+                    android:value="YOUR NOTIFICATION CHANNEL NAME"/>
+        <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_description"
+                    android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION"/>
+        <!-- <meta-data
+                    android:name="com.google.firebase.messaging.default_notification_channel_id"
+                    android:value="@string/default_notification_channel_id"/> -->
+        
+        <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
+                    android:resource="@android:color/white"/>
+        <meta-data  android:name="com.google.firebase.messaging.default_notification_icon" 
+                    android:resource="@mipmap/ic_launcher" />
 
     <receiver android:name="io.invertase.firebase.notifications.RNFirebaseNotificationReceiver"/>
       <receiver android:enabled="true" android:exported="true"  android:name="io.invertase.firebase.notifications.RNFirebaseNotificationsRebootReceiver">

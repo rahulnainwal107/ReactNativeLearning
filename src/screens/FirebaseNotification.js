@@ -15,12 +15,12 @@ import img from '../Images/firebase.png'
 type Props = {};
 export default class App extends React.Component<Props> {
 
-  async UNSAFE_componentDidMount() {
+  async componentDidMount() {
     this.checkPermission();
     this.createNotificationListeners(); //add this line
   }
 
-  UNSAFE_componentWillUnmount() {
+  componentWillUnmount() {
     this.notificationListener;
     this.notificationOpenedListener;
   }
