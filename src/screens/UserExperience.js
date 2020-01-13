@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, TextInput, Button, KeyboardAvoidingView, TouchableNativeFeedback, Alert } from 'react-native'
+import { View, Text, TextInput, Button, KeyboardAvoidingView, TouchableNativeFeedback, Alert, TouchableOpacity } from 'react-native'
 const onPressButton = () => {
     console.log('Sign In...!!');
 }
@@ -14,33 +14,39 @@ function UserExperience() {
         firstTextInput.focus();
     }, [])
     return (
-        <View style={{ flex: 1, flexDirection: 'column' }}>
-            <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 10 }}
-                onChangeText={text => setUsename(usename.name = text)} keyboardType="default"
-                value={usename.name} placeholder="Username"
-                returnKeyType={"next"}
-                ref={(input) => { firstTextInput = input; }}
-                onSubmitEditing={() => { secondTextInput.focus(); }}
-                blurOnSubmit={false}
-            />
-            <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 10 }}
-                onChangeText={text => setUsename(usename.password = text)} keyboardType="number-pad"
-                value={usename.password} placeholder="Password"
-                ref={(input) => { secondTextInput = input; }}
-                returnKeyType={"go"} secureTextEntry={true} />
-            <Button title="Submit" />
-            <KeyboardAvoidingView style={{ flex: 1, justifyContent: 'flex-end', margin: 10, padding: 10 }}>
-                <TouchableNativeFeedback onPress={onPressButton}
-                    background={TouchableNativeFeedback.Ripple('red')}
+        <KeyboardAvoidingView style={{ flex: 1 }} >
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                <View>
+                    <TextInput style={{ height: 40, borderColor: 'green', borderWidth: 1, margin: 10, backgroundColor: 'white' }}
+                        onChangeText={text => setUsename(usename.name = text)} keyboardType="default"
+                        value={usename.name} placeholder="Username"
+                        returnKeyType={"next"}
+                        ref={(input) => { firstTextInput = input; }}
+                        onSubmitEditing={() => { secondTextInput.focus(); }}
+                        blurOnSubmit={false}
+                    />
+                    <TextInput style={{ height: 40, borderColor: 'green', borderWidth: 1, margin: 10, backgroundColor: 'white' }}
+                        onChangeText={text => setUsename(usename.password = text)} keyboardType="number-pad"
+                        value={usename.password} placeholder="Password"
+                        ref={(input) => { secondTextInput = input; }}
+                        returnKeyType={"go"} secureTextEntry={true} />
+                    <TouchableOpacity style={{ height: 40, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center', margin: 10, padding: 10, }}>
+                        <Text>SUBMIT</Text>
+                    </TouchableOpacity>
+                </View>
+                <View >
+                    <TouchableNativeFeedback onPress={onPressButton}
+                        background={TouchableNativeFeedback.Ripple('red')}
                     //background={TouchableNativeFeedback.SelectableBackground('red')}
                     //useForeground={true}
-                >
-                    <View style={{ height: 40, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center' }}>
-                        <Text >New user sign in?</Text>
-                    </View>
-                </TouchableNativeFeedback>
-            </KeyboardAvoidingView>
-        </View>
+                    >
+                        <View style={{ height: 40, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center', margin: 10, padding: 10, }}>
+                            <Text >New user sign in?</Text>
+                        </View>
+                    </TouchableNativeFeedback>
+                </View>
+            </View>
+        </KeyboardAvoidingView>
     )
 }
 

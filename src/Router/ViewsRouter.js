@@ -20,6 +20,7 @@ import PaymentModal from '../screens/PaymentModal';
 import CreditCardInput from '../screens/CreditCardInput';
 import CardInput from '../screens/CardInput';
 import SliderScreen from '../screens/SliderScreen';
+import customeSignInScreen from '../screens/ImageInBackground'
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -84,6 +85,9 @@ const AppStack = createStackNavigator({
     },
     SliderScreen: {
         screen: SliderScreen
+    },
+    customeSignInScreen: {
+        screen: customeSignInScreen
     }
 }, {
     initialRouteName: 'ButtonScreen',
