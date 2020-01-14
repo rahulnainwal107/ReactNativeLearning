@@ -56,8 +56,11 @@ const ButtonScreen = (props) => {
     const sliderScreen = () => {
         props.navigation.navigate('SliderScreen');
     }
-    const customeSignInScreen = () =>{
+    const customeSignInScreen = () => {
         props.navigation.navigate('customeSignInScreen')
+    }
+    const ImageViewComponent = () => {
+        props.navigation.navigate('ImageViewComponent')
     }
     return (
         <ScrollView>
@@ -80,6 +83,7 @@ const ButtonScreen = (props) => {
             <Button title="Credit Input" onPress={cardInput}></Button>
             <Button title="Slider Screen" onPress={sliderScreen}></Button>
             <Button title="Custom signin screen" onPress={customeSignInScreen}></Button>
+            <Button title="Image View Component" onPress={ImageViewComponent}></Button>
         </ScrollView>
     )
 }
