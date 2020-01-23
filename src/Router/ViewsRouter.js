@@ -22,6 +22,7 @@ import CardInput from '../screens/CardInput';
 import SliderScreen from '../screens/SliderScreen';
 import customeSignInScreen from '../screens/ImageInBackground';
 import ImageViewComponent from '../screens/ImageViewComponent';
+import NetInfoSubscription from '../screens/NetInfoSubscription';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -92,6 +93,9 @@ const AppStack = createStackNavigator({
     },
     ImageViewComponent: {
         screen: ImageViewComponent
+    },
+    NetInfoSubscription: {
+        screen: NetInfoSubscription
     }
 }, {
     initialRouteName: 'ButtonScreen',
