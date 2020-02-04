@@ -65,6 +65,9 @@ const ButtonScreen = (props) => {
     const netInfoSubscription = () => {
         props.navigation.navigate('NetInfoSubscription')
     }
+    const toolbarWithSearchFeature = () => {
+        props.navigation.navigate('ToolbarWithSearchFeature')
+    }
     
     return (
         <ScrollView>
@@ -89,6 +92,7 @@ const ButtonScreen = (props) => {
             <Button title="Custom signin screen" onPress={customeSignInScreen}></Button>
             <Button title="Image View Component" onPress={imageViewComponent}></Button>
             <Button title="Net Info Subscription" onPress={netInfoSubscription}></Button>
+            <Button title="Toolbar With Search Feature" onPress={toolbarWithSearchFeature}></Button>
         </ScrollView>
     )
 }

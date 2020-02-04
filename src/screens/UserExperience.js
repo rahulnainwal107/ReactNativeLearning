@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, Button, KeyboardAvoidingView, TouchableNativeFeedback, Alert, TouchableOpacity } from 'react-native'
+import { useHeaderHeight } from 'react-navigation-stack';
 const onPressButton = () => {
     console.log('Sign In...!!');
 }
@@ -13,6 +14,8 @@ function UserExperience() {
     useEffect(() => {
         firstTextInput.focus();
     }, [])
+    const headerHeight = useHeaderHeight();
+    console.log("Header height ", headerHeight)
     return (
         <KeyboardAvoidingView style={{ flex: 1 }} >
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>

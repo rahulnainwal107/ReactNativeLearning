@@ -23,6 +23,7 @@ import SliderScreen from '../screens/SliderScreen';
 import customeSignInScreen from '../screens/ImageInBackground';
 import ImageViewComponent from '../screens/ImageViewComponent';
 import NetInfoSubscription from '../screens/NetInfoSubscription';
+import ToolbarWithSearchFeature from '../screens/ToolbarWithSearchFeature'
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -96,6 +97,12 @@ const AppStack = createStackNavigator({
     },
     NetInfoSubscription: {
         screen: NetInfoSubscription
+    },
+    ToolbarWithSearchFeature: {
+        screen: ToolbarWithSearchFeature,
+        navigationOptions: {
+            header: null
+        }
     }
 }, {
     initialRouteName: 'ButtonScreen',
