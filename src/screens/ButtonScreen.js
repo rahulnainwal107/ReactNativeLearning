@@ -68,7 +68,10 @@ const ButtonScreen = (props) => {
     const toolbarWithSearchFeature = () => {
         props.navigation.navigate('ToolbarWithSearchFeature')
     }
-    
+    const fastImageLoading = () => {
+        props.navigation.navigate('FastImageLoading')
+    }
+
     return (
         <ScrollView>
             <Button title="Tab Screen" onPress={tabNavigator}></Button>
@@ -93,6 +96,7 @@ const ButtonScreen = (props) => {
             <Button title="Image View Component" onPress={imageViewComponent}></Button>
             <Button title="Net Info Subscription" onPress={netInfoSubscription}></Button>
             <Button title="Toolbar With Search Feature" onPress={toolbarWithSearchFeature}></Button>
+            <Button title="Fast Image Loading" onPress={fastImageLoading}></Button>
         </ScrollView>
     )
 }

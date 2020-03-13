@@ -23,7 +23,8 @@ import SliderScreen from '../screens/SliderScreen';
 import customeSignInScreen from '../screens/ImageInBackground';
 import ImageViewComponent from '../screens/ImageViewComponent';
 import NetInfoSubscription from '../screens/NetInfoSubscription';
-import ToolbarWithSearchFeature from '../screens/ToolbarWithSearchFeature'
+import ToolbarWithSearchFeature from '../screens/ToolbarWithSearchFeature';
+import FastImageLoading from '../screens/FastImageLoading';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -103,6 +104,9 @@ const AppStack = createStackNavigator({
         navigationOptions: {
             header: null
         }
+    },
+    FastImageLoading: {
+        screen: FastImageLoading
     }
 }, {
     initialRouteName: 'ButtonScreen',
