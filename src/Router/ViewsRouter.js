@@ -26,6 +26,7 @@ import NetInfoSubscription from '../screens/NetInfoSubscription';
 import ToolbarWithSearchFeature from '../screens/ToolbarWithSearchFeature';
 import FastImageLoading from '../screens/FastImageLoading';
 import ToolbarUsingMaterialUI from '../screens/ToolbarUsingMaterialUI';
+import AnimationTestStack from '../Router/AnimationTestStack';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
@@ -114,6 +115,9 @@ const AppStack = createStackNavigator({
     },
     ToolbarUsingMaterialUI: {
         screen: ToolbarUsingMaterialUI
+    },
+    AnimationTestStack: {
+        screen: AnimationTestStack
     }
 }, {
     initialRouteName: 'ButtonScreen',

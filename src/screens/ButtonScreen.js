@@ -76,7 +76,9 @@ const ButtonScreen = (props) => {
     const toolbarUsingMaterialUI = () => {
         props.navigation.navigate('ToolbarUsingMaterialUI')
     }
-
+    const animationTestStack = () => {
+        props.navigation.navigate('AnimationTestStack')
+    }
     return (
         <View style={{ flex: 1 }}>
             <Toolbar
@@ -120,6 +122,7 @@ const ButtonScreen = (props) => {
                 <Button title="Toolbar With Search Feature" onPress={toolbarWithSearchFeature}></Button>
                 <Button title="Fast Image Loading" onPress={fastImageLoading}></Button>
                 <Button title="Toolbar using Material UI" onPress={toolbarUsingMaterialUI}></Button>
+                <Button title="Animation Test" onPress={animationTestStack}></Button>
             </ScrollView>
         </View>
     )
