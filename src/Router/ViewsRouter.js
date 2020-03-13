@@ -25,10 +25,14 @@ import ImageViewComponent from '../screens/ImageViewComponent';
 import NetInfoSubscription from '../screens/NetInfoSubscription';
 import ToolbarWithSearchFeature from '../screens/ToolbarWithSearchFeature';
 import FastImageLoading from '../screens/FastImageLoading';
+import ToolbarUsingMaterialUI from '../screens/ToolbarUsingMaterialUI';
 
 const AppStack = createStackNavigator({
     ButtonScreen: {
-        screen: ButtonScreen
+        screen: ButtonScreen,
+        navigationOptions: {
+            header: null
+        }
     },
     TabNavigator: {
         screen: TabNavigator
@@ -107,6 +111,9 @@ const AppStack = createStackNavigator({
     },
     FastImageLoading: {
         screen: FastImageLoading
+    },
+    ToolbarUsingMaterialUI: {
+        screen: ToolbarUsingMaterialUI
     }
 }, {
     initialRouteName: 'ButtonScreen',

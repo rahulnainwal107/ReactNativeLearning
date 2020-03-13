@@ -1,5 +1,7 @@
 import React from 'react'
-import { View, Text, Button, ScrollView } from 'react-native'
+import { View, Text, Button, ScrollView } from 'react-native';
+import { Toolbar } from 'react-native-material-ui';
+
 
 const ButtonScreen = (props) => {
     const tabNavigator = () => {
@@ -71,33 +73,55 @@ const ButtonScreen = (props) => {
     const fastImageLoading = () => {
         props.navigation.navigate('FastImageLoading')
     }
+    const toolbarUsingMaterialUI = () => {
+        props.navigation.navigate('ToolbarUsingMaterialUI')
+    }
 
     return (
-        <ScrollView>
-            <Button title="Tab Screen" onPress={tabNavigator}></Button>
-            <Button title="User Experience" onPress={userExperience}></Button>
-            <Button title="Custom Activity Indicator" onPress={customActivityIndicator}></Button>
-            <Button title="Screen Overlay" onPress={screenOverlay}></Button>
-            <Button title="Archive On Cloud Screen" onPress={archiveOnCloudScreen}></Button>
-            <Button title="Section List" onPress={sectionListExample}></Button>
-            <Button title="Bar Chart" onPress={barChart}></Button>
-            <Button title="Floating Button" onPress={floatingButton}></Button>
-            <Button title="Floating Button" onPress={drawerNavigation}></Button>
-            <Button title="Animated View" onPress={animatedView}></Button>
-            <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
-            <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
-            <Button title="React Native Collapsible" onPress={reactNativeCollapsible}></Button>
-            <Button title="React Native Collapsible1" onPress={reactNativeCollapsible1}></Button>
-            <Button title="Payment Modal" onPress={paymentModal}></Button>
-            <Button title="Credit Card Input" onPress={creditCardInput}></Button>
-            <Button title="Credit Input" onPress={cardInput}></Button>
-            <Button title="Slider Screen" onPress={sliderScreen}></Button>
-            <Button title="Custom signin screen" onPress={customeSignInScreen}></Button>
-            <Button title="Image View Component" onPress={imageViewComponent}></Button>
-            <Button title="Net Info Subscription" onPress={netInfoSubscription}></Button>
-            <Button title="Toolbar With Search Feature" onPress={toolbarWithSearchFeature}></Button>
-            <Button title="Fast Image Loading" onPress={fastImageLoading}></Button>
-        </ScrollView>
+        <View style={{ flex: 1 }}>
+            <Toolbar
+                //leftElement="menu"
+                centerElement="Searchable"
+                rightElement={{
+                    man: {
+                        icon: "more-vert",
+                        labels: ["item 1", "item 2"]
+                    }
+                }}
+                searchable={{
+                    autoFocus: true,
+                    placeholder: 'Search',
+                }}
+
+                onRightElementPress={(label) => { console.log(label) }}
+            />
+            <ScrollView>
+                <Button title="Tab Screen" onPress={tabNavigator}></Button>
+                <Button title="User Experience" onPress={userExperience}></Button>
+                <Button title="Custom Activity Indicator" onPress={customActivityIndicator}></Button>
+                <Button title="Screen Overlay" onPress={screenOverlay}></Button>
+                <Button title="Archive On Cloud Screen" onPress={archiveOnCloudScreen}></Button>
+                <Button title="Section List" onPress={sectionListExample}></Button>
+                <Button title="Bar Chart" onPress={barChart}></Button>
+                <Button title="Floating Button" onPress={floatingButton}></Button>
+                <Button title="Floating Button" onPress={drawerNavigation}></Button>
+                <Button title="Animated View" onPress={animatedView}></Button>
+                <Button title="Show Hide View On Scroll" onPress={showHideViewOnScroll}></Button>
+                <Button title="Floating Action Button" onPress={floatingActionButton}></Button>
+                <Button title="React Native Collapsible" onPress={reactNativeCollapsible}></Button>
+                <Button title="React Native Collapsible1" onPress={reactNativeCollapsible1}></Button>
+                <Button title="Payment Modal" onPress={paymentModal}></Button>
+                <Button title="Credit Card Input" onPress={creditCardInput}></Button>
+                <Button title="Credit Input" onPress={cardInput}></Button>
+                <Button title="Slider Screen" onPress={sliderScreen}></Button>
+                <Button title="Custom signin screen" onPress={customeSignInScreen}></Button>
+                <Button title="Image View Component" onPress={imageViewComponent}></Button>
+                <Button title="Net Info Subscription" onPress={netInfoSubscription}></Button>
+                <Button title="Toolbar With Search Feature" onPress={toolbarWithSearchFeature}></Button>
+                <Button title="Fast Image Loading" onPress={fastImageLoading}></Button>
+                <Button title="Toolbar using Material UI" onPress={toolbarUsingMaterialUI}></Button>
+            </ScrollView>
+        </View>
     )
 }
 export default ButtonScreen;
